@@ -4,6 +4,7 @@ import morgan from "morgan";
 import config from "./config.js";
 import invitadosRoutes from "./routes/invitados.routes.js";
 import familiasRoutes from "./routes/familias.routes.js";
+import entradasRoutes from "./routes/entradas.routes.js";
 
 const app = express();
 
@@ -19,5 +20,6 @@ app.use(express.json());
 // Routes
 app.use("/api", invitadosRoutes);
 app.use("/api", familiasRoutes);
+app.use("/api", entradasRoutes);
 
 export default app;
