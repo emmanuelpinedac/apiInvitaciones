@@ -1,6 +1,6 @@
 import { getConnection, querys, sql } from "../models/index.js";
 
-//Función para crear registro de un invitado
+//Función para crear registro de un nuevo invitado
 export const crearInvitado = async (req, res) => {
   let { nombre_invitado } = req.body;
   let { id_familia } = req.body;
