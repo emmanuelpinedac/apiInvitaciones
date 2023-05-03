@@ -1,4 +1,4 @@
-export const querys = {
+export const querysInvitados = {
 
   //C
   crearInvitado:
@@ -20,6 +20,6 @@ export const querys = {
 
   // D   -  Delete
   borrarInvitadoById:
-   "DELETE Invitado where id_invitado = @Id",
+   "DELETE Invitado where id_invitado = @id",
 
 };

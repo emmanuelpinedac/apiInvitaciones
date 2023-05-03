@@ -3,6 +3,7 @@ import cors from "cors";
 import morgan from "morgan";
 import config from "./config.js";
 import invitadosRoutes from "./routes/invitados.routes.js";
+import familiasRoutes from "./routes/familias.routes.js";
 
 const app = express();
 
@@ -17,5 +18,6 @@ app.use(express.json());
 
 // Routes
 app.use("/api", invitadosRoutes);
+app.use("/api", familiasRoutes);
 
 export default app;

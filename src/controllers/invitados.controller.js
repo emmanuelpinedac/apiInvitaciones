@@ -1,4 +1,4 @@
-import { getConnection, querys, sql } from "../models/index.js";
+import { getConnection, querysInvitados, sql } from "../models/index.js";
 
 //Función para crear registro de un nuevo invitado
 export const crearInvitado = async (req, res) => {
@@ -20,7 +20,7 @@ export const crearInvitado = async (req, res) => {
       .request()
       .input("nombre_invitado", sql.VarChar, nombre_invitado)
       .input("id_familia", sql.Int, id_familia)
-      .query(querys.crearInvitado);
+      .query(querysInvitados.crearInvitado);
 
     res.json({ nombre_invitado, id_familia });
   } catch (error) {
@@ -36,7 +36,7 @@ try {
   const pool = await getConnection();
   const result = await pool
   .request()
-  .query(querys.getInvitados);
+  .query(querysInvitados.getInvitados);
   res.json(result.recordset);
 
 } catch (error) {11111
@@ -55,7 +55,7 @@ try {
     .request()
     .input("id", req.params.id)
     // El segundo id viene de la ruta, se debe respetar
-    .query(querys.getInvitadoById);
+    .query(querysInvitados.getInvitadoById);
 
   return res.json(result.recordset[0]); 
   //el cero es solo para que traiga el primer registro
@@ -86,9 +86,9 @@ try {
   await pool
     .request()
     .input("nombre_invitado", sql.VarChar, nombre_invitado)
-    .input("id_familia", sql.VarChar, id_familia)
+    .input("id_familia", sql.Int, id_familia)
     .input("id", req.params.id)
-    .query(querys.actualizarInvitado);
+    .query(querysInvitados.actualizarInvitado);
   res.json({ id_familia, nombre_invitado });
 } catch (error) {
   res.status(500);
@@ -103,7 +103,7 @@ try {
   const result = await pool
     .request()
     .input("id", req.params.id)
-    .query(querys.borrarInvitadoById);
+    .query(querysInvitados.borrarInvitadoById);
 
   if (result.rowsAffected[0] === 0) return res.sendStatus(404);
 
