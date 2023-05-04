@@ -4,7 +4,7 @@ export const querysConfirmaciones = {
 
   //C
   crearConfirmacion:
-    "INSERT INTO Confirmacion VALUES (@fecha_confirmacion, @id_invitado, @id_entrada, @id_PlatoFuerte, @asistencia, @mensaje);",
+    "INSERT INTO Confirmacion VALUES (GETDATE(), @id_invitado, @id_entrada, @id_PlatoFuerte, @asistencia, @mensaje);",
 
       //R - ejemplo simple
   getConfirmaciones:
@@ -18,7 +18,7 @@ export const querysConfirmaciones = {
 
     //U   - Update
   actualizarConfirmacion:
-  "UPDATE Confirmacion SET fecha_confirmacion = @fecha_confirmacion, id_invitado = @id_invitado, id_entrada = @id_entrada, id_PlatoFuerte = @id_PlatoFuerte, asistencia = @asistencia, mensaje = @mensaje WHERE id_confirmacion = @id",
+  "UPDATE Confirmacion SET fecha_confirmacion = GETDATE(), id_invitado = @id_invitado, id_entrada = @id_entrada, id_PlatoFuerte = @id_PlatoFuerte, asistencia = @asistencia, mensaje = @mensaje WHERE id_confirmacion = @id",
 
 
   // D   -  Delete

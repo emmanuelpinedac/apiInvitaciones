@@ -35,7 +35,7 @@ export const crearConfirmacion = async (req, res) => {
 
     await pool
       .request()
-      .input("fecha_confirmacion", sql.DateTime, fecha_confirmacion)
+      // .input("fecha_confirmacion", sql.DateTime, fecha_confirmacion)
       .input("id_invitado", sql.Int, id_invitado)
       .input("id_entrada", sql.Int, id_entrada)
       .input("id_PlatoFuerte", sql.Int, id_PlatoFuerte)
