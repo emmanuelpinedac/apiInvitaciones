@@ -78,7 +78,7 @@ if (nombre_entrada == null) {
 }
 
 if (detalle_entrada == null) {
-  return res.status(400).json({ msg: "Por favor llene el campo de la familia" });
+  return res.status(400).json({ msg: "Por favor llene el campo de la Entrada" });
 }
 
 try {
